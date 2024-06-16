@@ -1,0 +1,207 @@
+# mutation{
+#   createUser(userInput: {name: "RealRavi", email: "varmaravi@gmail.com", password: "12345", identification_num:"11802426"}){
+#     email,
+#     _id,
+#     identification_num
+#   }
+# }
+
+# query{
+#   login(logInput: {identification_num:"1258000", password: "12345", role: "dean" }){
+#     token
+#   }
+# }
+
+
+# mutation{
+#   createComplaint(complaintInput:{complaint_category: "New Complaint", complaint_details:"Test", section: "Test", department: "Test"}){
+#     _id,
+#     complaint_details,
+#     complaint_category,
+#     status,
+#     upvotes,
+#     views,
+#     complainee {
+#     _id,
+#     name,
+#       email
+#   }
+#   }
+# }
+
+
+
+# query{
+#   listComplaints(status: "Active", userId: "6566f3db05697248b8bfb608"){
+#      _id,
+#     complaint_details,
+#     complaint_category,
+#     status,
+#     upvotes,
+#     views,
+#     complainee {
+#     _id,
+#     name,
+#       email
+#   }
+#   }
+# }
+
+
+# mutation{
+#   upVoteComplaint(complaintId: "656739386293438088cd23a7"){
+#     _id,
+#     createdAt,
+#     upvotes,
+#     updatedAt,
+#     views,
+#   complaint_category,
+#   section,
+#   department,
+#   complaint_details,
+#   status,
+#   resolvement,
+#   resolvedBy{
+#     _id,
+#       name,
+#       email,
+#       identification_num
+#   }
+#   resolvedAt,
+#     complainee{
+#       _id,
+#       name,
+#       email,
+#       identification_num
+#     }
+#   }
+# }
+
+
+
+# query{
+#   viewComplaint(complaintId: "656739386293438088cd23a7", userId: "6566f3db05697248b8bfb608"){
+#     complaint{
+#       views,
+#       department,
+#       complaint_category,
+#       complainee{
+#         email,
+#         _id
+#       }
+#     },
+#     upvoted,
+#     viewer{
+#       _id,
+#       email
+#     }
+#   }
+# }
+
+
+
+# mutation{
+#   resolveComplaint(resolveInput:{complaintId: "656739386293438088cd23a7", resolveText: "Resolved with high priority"}){
+#     _id,
+#   complaint_category,
+#   section,
+#   department,
+#   complaint_details,
+#   createdAt,
+#   status,
+#   upvotes,
+#   views,
+#   resolvement,
+#   resolvedBy{
+#     name,
+#     email,
+#     _id
+#   }
+#   resolvedAt,
+#   updatedAt,
+#   complainee{
+#     name,
+#     email,
+#     _id
+#   }
+#   }
+# }
+
+
+# mutation{
+#   createComment(commentInput:{complaint_id: "65672a493419f150e06c5463", comment_text: "Faced same issue"}){
+#     _id,
+#     commenter{
+#       email,
+#       identification_num
+#     },
+#     complaint{
+#       views,
+#       complainee{
+#         email
+#       }
+#     },
+#     comment_text,
+#     createdAt,
+#     updatedAt
+#   }
+# }
+
+
+# query{
+#   listComments(complaintId:"65672a493419f150e06c5463"){
+#     _id,
+#     comment_text,
+#     createdAt,
+#     updatedAt
+#     commenter{
+#       email,
+#       identification_num,
+#       _id
+#     },
+#     complaint{
+#       complaint_details
+#       complainee{
+#         email,
+#         identification_num
+#       }
+#     }
+#   }
+# }
+
+
+
+
+
+# mutation{
+#   createFeedback(feedbackInput:{feedback_text: "Highly impressed", complaint_id: "656739386293438088cd23a7"}){
+#     feedbacker{
+#       email,
+#       identification_num
+#     },
+#     feedback_text,
+#     createdAt,
+#     feedback_complaint{
+#       views
+#       complainee{
+#         email
+#       }
+#     }
+#   }
+# }
+
+# query{
+#   getFeedback(complaintId: "656739386293438088cd23a7"){
+#     feedbacker{
+#       email
+#     },
+#     feedback_text,
+#     feedback_complaint{
+#       upvotes,
+#       complainee{
+#         email
+#       }
+#     },
+#     createdAt
+#   }
+# }
