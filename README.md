@@ -17,7 +17,7 @@ A full-stack web application for registering, managing, and tracking complaints,
 ### 1. Clone the Repository
 
 ```sh
-git clone https://github.com/your-username/complaint-registration-system.git
+git clone https://github.com/Sanjana-Janagani/Complaint-Registration-System.git
 cd complaint-registration-system
 ```
 ---
