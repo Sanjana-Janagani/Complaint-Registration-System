@@ -33,6 +33,8 @@ Create a .env file in complaint-system-backend with the following variables:
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 PORT=5000
+MONGO_USER='xxxxxxx'
+MONGO_PASSWORD='xxxxxxxx'
 ```
 
 Start the backend server:
